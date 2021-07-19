@@ -1,0 +1,48 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 15px 15px 20px 15px;
+  margin: 20px 5px 20px 5px;
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    height: 75vh;
+    padding: 20px 15px 20px 15px;
+    margin: 16px 7px 16px 7px;
+  }
+}
+
+.person-name {
+  color: #0f172a;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.designation {
+  color: #1e293b;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.home-description {
+  color: #475569;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  margin: 15px 5px 15px 5px;
+}
+
+.view-resume-button {
+  color: #f43f5e;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  width: 140px;
+  padding: 10px 15px 10px 15px;
+}

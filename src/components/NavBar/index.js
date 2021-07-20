@@ -11,16 +11,14 @@ const NavBar = props => {
       const selectedTab = activeTab === item.name ? 'selected-tab' : ''
 
       return (
-        <>
-          <li
-            className={`nav-link-item ${selectedTab}`}
-            key={item.id}
-            onClick={selectTab}
-          >
-            <img src={item.iconUrl} alt={item.name} className="nav-link-icon" />
-            <p className="nav-link-text">{item.name}</p>
-          </li>
-        </>
+        <li
+          className={`nav-link-item ${selectedTab}`}
+          key={item.id}
+          onClick={selectTab}
+        >
+          <img src={item.iconUrl} alt={item.name} className="nav-link-icon" />
+          <p className="nav-link-text">{item.name}</p>
+        </li>
       )
     })
   }

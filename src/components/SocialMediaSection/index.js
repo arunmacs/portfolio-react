@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import './index.css'
 
 const socialMediaAppsData = [
@@ -33,29 +35,21 @@ const socialMediaAppsData = [
   },
 ]
 
-const SocialMediaSection = () => {
-  console.log()
+class SocialMediaSection extends Component {
+  renderSocialMediaAppsList = () =>
+    socialMediaAppsData.map(app => (
+      <a href={app.siteUrl} key={app.id}>
+        <img className="app-logo" src={app.imageUrl} alt={app.name} />
+      </a>
+    ))
 
-  return (
-    <div className="social-container">
-      <div className="social-icons-link-container">
-        {socialMediaAppsData.map(social => (
-          <a
-            href={social.siteUrl}
-            key={social.id}
-            target="_blank"
-            rel="noReferrer"
-          >
-            <img
-              src={social.imageUrl}
-              alt={social.name}
-              className="social-icon"
-            />
-          </a>
-        ))}
+  render() {
+    return (
+      <div className="social-media-section">
+        {this.renderSocialMediaAppsList()}
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default SocialMediaSection

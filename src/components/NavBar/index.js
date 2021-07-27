@@ -1,38 +1,44 @@
+import {Component} from 'react'
+
 import './index.css'
 
-const NavBar = props => {
-  const getNavItems = () => {
-    const {navBarData, onClickTab, activeTab} = props
-    return navBarData.map(item => {
-      const selectTab = () => {
-        onClickTab(item.name)
-      }
+class NavBar extends Component {
+  renderNavItemsList = () => {
+    const {navBarItems, activeNavBarItem, changeActiveNavBarItem} = this.props
 
-      const selectedTab = activeTab === item.name ? 'selected-tab' : ''
-
+    return navBarItems.map(navItem => {
+      const onClickNavBarItem = () => changeActiveNavBarItem(navItem.name)
+      const buttonClassName =
+        activeNavBarItem === navItem.name ? 'active-item' : ''
       return (
         <li
-          className={`nav-link-item ${selectedTab}`}
-          key={item.id}
-          onClick={selectTab}
+          className={`nav-item ${buttonClassName}`}
+          key={navItem.id}
+          onClick={onClickNavBarItem}
         >
-          <img src={item.iconUrl} alt={item.name} className="nav-link-icon" />
-          <p className="nav-link-text">{item.name}</p>
+          <img
+            className="item-image"
+            src={navItem.iconUrl}
+            alt={navItem.name}
+          />
+          <p className="item-name">{navItem.name}</p>
         </li>
       )
     })
   }
 
-  return (
-    <nav className="navbar-container">
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/portfolio-profile-img.png"
-        alt="profile"
-        className="profile-img"
-      />
-      <ul className="nav-links-container">{getNavItems()}</ul>
-    </nav>
-  )
+  render() {
+    return (
+      <nav className="navbar">
+        <img
+          className="profile-image"
+          src="https://assets.ccbp.in/frontend/react-js/portfolio-profile-img.png"
+          alt="profile"
+        />
+        <ul className="nav-items-list">{this.renderNavItemsList()}</ul>
+      </nav>
+    )
+  }
 }
 
 export default NavBar

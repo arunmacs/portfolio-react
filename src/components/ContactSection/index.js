@@ -1,20 +1,20 @@
 import './index.css'
 
 const ContactSection = () => (
-  <div className="contact-container">
-    <h1 className="my-contact-text">My Contact</h1>
+  <div>
+    <h1 className="contact-section-heading">My Contact</h1>
     <img
+      className="location-image"
       src="https://assets.ccbp.in/frontend/react-js/location-img.png"
-      alt="location"
-      className="map-location"
+      alt="location-map"
     />
-    <p className="work-contact">
-      If you like my projects and interested to do work with me.Please
+    <p className="contact-section-description">
+      If you like my projects and interested to do work with me. Please
       contact...
     </p>
-    <h1 className="please-contact">Please Contact:</h1>
-    <p className="contact">9123456789</p>
-    <p className="contact">sophie.millers@gmail.com</p>
+    <p className="contact-details">Please Contact:</p>
+    <p className="mobile-number">9123456789</p>
+    <p className="email">sophie.millers@gmail.com</p>
   </div>
 )
 

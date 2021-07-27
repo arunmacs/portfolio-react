@@ -1,90 +1,58 @@
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 1px solid #ffffff;
-  border-radius: 12px;
-  padding: 15px 15px 20px 15px;
-  margin: 20px 5px 20px 5px;
-}
-
-@media (min-width: 768px) {
-  .projects-container {
-    height: 75vh;
-    padding: 20px 15px 20px 15px;
-    margin: 16px 7px 16px 7px;
-  }
-}
-
-.my-work-text {
+.projects-heading {
   color: #0f172a;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 5px;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
 }
 
-ul {
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
+@media screen and (min-width: 768px) {
+  .projects-heading {
+    font-size: 32px;
+  }
 }
 
 .projects-list {
-  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin: 8px;
+  flex-wrap: wrap;
+  padding-left: 0;
 }
 
-.project-container {
+@media screen and (min-width: 768px) {
+  .projects-list {
+    max-width: 750px;
+    justify-content: flex-start;
+  }
+}
+
+.project-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 8px;
+  margin: 16px;
+  width: 100%;
 }
 
-.project-img {
-  width: 150px;
-  margin: 5px;
+@media screen and (min-width: 768px) {
+  .project-item {
+    width: 40%;
+  }
+}
+
+.project-image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .project-image {
+    height: 185px;
+  }
 }
 
 .project-name {
+  text-align: center;
   color: #0f172a;
-  font-size: 15px;
-  font-weight: 500;
-  margin: 5px;
-}
-
-@media (min-width: 768px) {
-  .projects-list {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 8px;
-  }
-
-  .project-container {
-    margin: 10px;
-  }
-
-  .project-img {
-    width: 200px;
-    margin: 8px;
-  }
-
-  .project-name {
-    color: #0f172a;
-    font-size: 17px;
-    font-weight: 500;
-    margin: 5px;
-  }
+  font-family: 'Roboto';
+  font-size: 16px;
 }

@@ -1,48 +1,63 @@
-.home-container {
+.home-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ffffff;
-  border-radius: 12px;
-  padding: 15px 15px 20px 15px;
-  margin: 20px 5px 20px 5px;
+  width: 100%;
 }
 
-@media (min-width: 768px) {
-  .home-container {
-    height: 75vh;
-    padding: 20px 15px 20px 15px;
-    margin: 16px 7px 16px 7px;
-  }
-}
-
-.person-name {
+.username {
   color: #0f172a;
-  font-size: 30px;
-  font-weight: bold;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .username {
+    font-size: 32px;
+  }
 }
 
 .designation {
   color: #1e293b;
-  font-size: 17px;
-  font-weight: 700;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.home-description {
-  color: #475569;
-  font-size: 19px;
-  font-weight: 700;
+@media screen and (min-width: 768px) {
+  .designation {
+    font-size: 24px;
+  }
+}
+
+.experience-description {
   text-align: center;
-  margin: 15px 5px 15px 5px;
+  color: #334155;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 500px;
 }
 
-.view-resume-button {
+@media screen and (min-width: 768px) {
+  .experience-description {
+    font-size: 20px;
+  }
+}
+
+.view-resume-btn {
   color: #f43f5e;
-  font-size: 17px;
-  font-weight: 600;
+  background-color: #f8fafc;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 500;
   border: none;
   border-radius: 8px;
-  width: 140px;
-  padding: 10px 15px 10px 15px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  outline: none;
 }

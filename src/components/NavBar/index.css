@@ -1,94 +1,90 @@
-.navbar-container {
+.navbar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-color: #ffffff35;
   border: 1px solid #ffffff;
   border-radius: 12px;
-  padding: 15px 15px 20px 15px;
-  margin: 20px 5px 20px 5px;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  padding: 20px;
 }
 
-@media (min-width: 768px) {
-  .navbar-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 200px;
-    height: 95vh;
-    border: 1px solid #ffffff;
-    border-radius: 12px;
+@media screen and (min-width: 768px) {
+  .navbar {
+    width: 20%;
+    min-width: 200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-self: stretch;
   }
 }
 
-.profile-img {
-  height: 90px;
-  margin: 10px;
+.profile-image {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
 }
 
-.nav-links-container {
-  padding: 0px;
-  margin: 15px 5px 15px 5px;
+@media screen and (min-width: 768px) {
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+}
+
+.nav-items-list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-left: 0px;
 }
 
-.nav-link-item {
-  list-style-type: none;
-  width: 145px;
+@media screen and (min-width: 768px) {
+  .nav-items-list {
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+  }
+}
+
+.nav-item {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  padding: 8px 13px 8px 13px;
-  margin: 6px;
+  background-color: transparent;
+  border: none;
   border-radius: 8px;
-}
-
-.nav-link-icon {
-  height: 30px;
-}
-
-.nav-link-text {
-  font-size: 16px;
-  font-weight: 700;
-  color: #334155;
+  padding: 10px;
   margin: 4px;
-  padding: 3px;
+  cursor: pointer;
+  list-style-type: none;
+  width: 45%;
 }
 
-.selected-tab {
+@media screen and (min-width: 768px) {
+  .nav-item {
+    width: 100%;
+  }
+}
+
+.active-item {
   background-color: #ffffff20;
 }
 
-@media (min-width: 768px) {
-  .nav-links-container {
-    margin: 30px 5px 15px 5px;
-  }
-  .nav-link-item {
-    width: 160px;
-    padding: 8px 13px 8px 13px;
-    margin: 6px;
-    border-radius: 8px;
-  }
+.item-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
 
-  .profile-img {
-    height: 120px;
-    margin: 20px 5px 20px 5px;
-  }
-  .nav-link-icon {
-    height: 28px;
-  }
-
-  .nav-link-text {
-    font-size: 14px;
-    font-weight: 700;
-    color: #334155;
-    margin: 4px;
-    padding: 3px;
-  }
+.item-name {
+  color: #334155;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0px;
 }

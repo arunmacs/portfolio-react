@@ -1,10 +1,13 @@
 import {Component} from 'react'
-import NavBar from '../NavBar'
-import HomeSection from '../HomeSection'
+
 import AboutSection from '../AboutSection'
-import ProjectsSection from '../ProjectsSection'
 import ContactSection from '../ContactSection'
-import SocialSection from '../SocialMediaSection'
+import HomeSection from '../HomeSection'
+import NavBar from '../NavBar'
+import ProjectsSection from '../ProjectsSection'
+import SocialMediaSection from '../SocialMediaSection'
+
+import './index.css'
 
 const navBarItems = [
   {
@@ -28,16 +31,15 @@ const navBarItems = [
     name: 'CONTACT',
   },
 ]
-
 class Portfolio extends Component {
-  state = {activeTab: 'HOME'}
-
-  updateActiveTab = tabName => {
-    this.setState({activeTab: tabName})
+  state = {
+    activeNavBarItem: navBarItems[0].name,
   }
 
-  getActiveTabContent = tab => {
-    switch (tab) {
+  renderComponent = () => {
+    const {activeNavBarItem} = this.state
+
+    switch (activeNavBarItem) {
       case navBarItems[1].name:
         return <AboutSection />
       case navBarItems[2].name:
@@ -49,21 +51,27 @@ class Portfolio extends Component {
     }
   }
 
+  changeActiveNavBarItem = activeNavBarItem => {
+    this.setState({
+      activeNavBarItem,
+    })
+  }
+
   render() {
-    const {activeTab} = this.state
+    const {activeNavBarItem} = this.state
 
     return (
-      <>
+      <div className="portfolio-container">
         <NavBar
-          navBarData={navBarItems}
-          activeTab={activeTab}
-          onClickTab={this.updateActiveTab}
+          activeNavBarItem={activeNavBarItem}
+          changeActiveNavBarItem={this.changeActiveNavBarItem}
+          navBarItems={navBarItems}
         />
-        <div className="app-body">
-          {this.getActiveTabContent(activeTab)}
-          <SocialSection />
+        <div className="portfolio-body">
+          <div className="active-section">{this.renderComponent()}</div>
+          <SocialMediaSection />
         </div>
-      </>
+      </div>
     )
   }
 }

@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import './index.css'
 
 const projectsData = [
@@ -25,26 +27,23 @@ const projectsData = [
   },
 ]
 
-const ProjectsSection = () => {
-  console.log(projectsData)
+class ProjectsSection extends Component {
+  renderProjectsList = () =>
+    projectsData.map(project => (
+      <li className="project-item" key={project.id}>
+        <img className="project-image" src={project.imageUrl} alt="work" />
+        <p className="project-name">{project.name}</p>
+      </li>
+    ))
 
-  return (
-    <div className="projects-container">
-      <h1 className="my-work-text">My Work</h1>
-      <ul className="projects-list">
-        {projectsData.map(project => (
-          <li className="project-container" key={project.id}>
-            <img
-              src={project.imageUrl}
-              alt={project.name}
-              className="project-img"
-            />
-            <p className="project-name">{project.name}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <h1 className="projects-heading">My Work</h1>
+        <ul className="projects-list">{this.renderProjectsList()}</ul>
+      </div>
+    )
+  }
 }
 
 export default ProjectsSection

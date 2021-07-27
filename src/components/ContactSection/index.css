@@ -1,62 +1,51 @@
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  border: 1px solid #ffffff;
-  border-radius: 12px;
-  padding: 15px 15px 20px 15px;
-  margin: 20px 5px 20px 5px;
+.contact-section-heading {
+  color: #0f172a;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
 }
 
-@media (min-width: 768px) {
-  .contact-container {
-    height: 75vh;
-    padding: 20px 15px 20px 15px;
-    margin: 16px 7px 16px 7px;
+@media screen and (min-width: 576px) {
+  .contact-section-heading {
+    font-size: 32px;
   }
 }
 
-.my-contact-text {
-  color: #0f172a;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 5px;
+.location-image {
+  max-width: 100%;
+  height: 280px;
 }
 
-.map-location {
-  width: 280px;
-  height: 270px;
-  margin: 10px;
-}
-
-.work-contact {
-  color: #0f172a;
-  font-size: 15px;
-  font-weight: 500;
-  margin: 5px;
-}
-
-.please-contact {
-  color: #0f172a;
-  font-size: 20px;
-  font-weight: 800;
-  margin: 5px;
-}
-.contact {
-  color: #475569;
+.contact-section-description {
+  color: #334155;
+  font-family: 'Roboto';
   font-size: 16px;
-  font-weight: 500;
-  margin: 5px;
+  font-weight: 400;
 }
 
-@media (min-width: 768px) {
-  .map-location {
-    width: 90%;
-    margin: 10px;
+.contact-details {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 576px) {
+  .contact-details {
+    font-size: 24px;
   }
-  .work-contact {
-    font-size: 17px;
-    margin: 10px;
-  }
+}
+
+.mobile-number {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.email {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
 }

@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import './index.css'
 
 const skillsData = [
@@ -40,7 +42,7 @@ const educationData = [
   {
     id: 0,
     qualification: 'Graduation',
-    qualificationSource: 'B.Tech(Computer Science)',
+    qualificationSource: 'B.Tech (Computer Science)',
   },
   {
     id: 1,
@@ -54,51 +56,51 @@ const educationData = [
   },
 ]
 
-const AboutSection = () => {
-  console.log()
+class AboutSection extends Component {
+  renderSkillsList = () => (
+    <ul className="skills-list">
+      {skillsData.map(skill => (
+        <li className="skill-item" key={skill.id}>
+          <p className="skill">{skill.name}</p>
+        </li>
+      ))}
+    </ul>
+  )
 
-  return (
-    <div className="about-container">
-      <h1 className="about-text">About</h1>
-      <p className="description">
-        I started my journey in the world of computers from a young age,now
-        I&apos;m 21 years old,pursuing Computer Science majors at Santa Clara
-        University,USA. Web development is my center of interest.
-      </p>
-      <div className="education-skills-container">
-        <div className="education-container">
-          <h1 className="education">Education</h1>
-          <ul>
-            {educationData.map(item => (
-              <li key={item.id}>
-                <div className="qualification-div">
-                  <img
-                    src="https://assets.ccbp.in/frontend/react-js/list-icon-img.png"
-                    alt="list-icon"
-                    className="list-icon"
-                  />
-                  <h1 className="qualification">{item.qualification}</h1>
-                </div>
-                <p className="qualification-source">
-                  {item.qualificationSource}
-                </p>
-              </li>
-            ))}
-          </ul>
+  renderEducationDetailsList = () =>
+    educationData.map(education => (
+      <li key={education.id}>
+        <div>
+          <p className="qualification">{education.qualification}</p>
+          <p className="education-place">{education.qualificationSource}</p>
         </div>
-        <div className="skills-container">
-          <h1 className="skills-text">Skills</h1>
-          <ul className="skills-list">
-            {skillsData.map(item => (
-              <li className="skill-item" key={item.id}>
-                {item.name}
-              </li>
-            ))}
-          </ul>
+      </li>
+    ))
+
+  render() {
+    return (
+      <div>
+        <h1 className="about-section-heading">About</h1>
+        <p className="about-section-description">
+          I started my journey in the world of computers from a young age, now
+          I’m 21 years old, pursuing my Computer Science majors at Santa Clara
+          University, USA. Web development is my center of interest.
+        </p>
+        <div className="education-and-skills-container">
+          <div className="education-details-container">
+            <h1 className="education-and-skills-heading">Education</h1>
+            <ul className="education-details-list">
+              {this.renderEducationDetailsList()}
+            </ul>
+          </div>
+          <div className="skills-container">
+            <h1 className="education-and-skills-heading">Skills</h1>
+            {this.renderSkillsList()}
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default AboutSection
